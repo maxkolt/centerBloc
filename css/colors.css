@@ -1,0 +1,23 @@
+/* ЦВЕТА ЗДЕСЬ */
+
+.color-javascript {
+    background-color: orangered;
+    border-radius: 4rem;
+}
+
+.color-red {
+    background-color: #64000f;
+}
+
+.color-green {
+    background-color: darkgreen;
+    position: relative;
+}
+
+.color-yellow {
+    background-color: #a89304;
+}
+
+.color-blue {
+    background-color: #042393;
+}

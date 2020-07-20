@@ -1,0 +1,14 @@
+/* РАЗМЕТКА БЛОКОВ ЗДЕСЬ */
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.kvadrat {
+    margin: 3px;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
