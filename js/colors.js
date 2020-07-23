@@ -10,8 +10,8 @@ function changeColor() {
 }
 
 function klik(id) {
-elem = document.getElementById(id);
-state = elem.style.display;
-if (state == '') elem.style.display = 'none';
-else elem.style.display = '';
+    const elem = document.getElementById(id);
+    const state = elem.style.display;
+    if (state == '') elem.style.display = 'none';
+    else elem.style.display = '';
 }
