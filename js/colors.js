@@ -8,3 +8,10 @@ function changeColor() {
         i = 0;
     }
 }
+
+function klik(id) {
+elem = document.getElementById(id);
+state = elem.style.display;
+if (state == '') elem.style.display = 'none';
+else elem.style.display = '';
+}
