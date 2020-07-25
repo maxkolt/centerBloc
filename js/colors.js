@@ -15,3 +15,6 @@ function klik(id) {
     if (state == '') elem.style.display = 'none';
     else elem.style.display = '';
 }
+
+const elem = document.getElementById('3');
+elem.parentNode.removeChild(elem);
