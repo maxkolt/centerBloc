@@ -16,5 +16,8 @@ function klik(id) {
     else elem.style.display = '';
 }
 
-const elem = document.getElementById('3');
-elem.parentNode.removeChild(elem);
+const knopka = document.getElementById('cnopka');
+knopka.addEventListener('click', () => {
+    const kvadrat = document.getElementById('3');
+    kvadrat.remove();
+});
