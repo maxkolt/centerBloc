@@ -1,0 +1,30 @@
+ul li {
+
+}
+
+.brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 1rem;
+}
+
+.brands_item {
+    background: #f8caca;
+}
+
+.brands_item img {
+    display: block;
+    max-width: 100%;
+    width: 130px;
+    height: 75px;
+    object-fit: contain;
+
+}
+
+.brands_item a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
