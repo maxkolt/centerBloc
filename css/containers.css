@@ -13,28 +13,35 @@
     margin-top: 50px;
 }
 
-.bigBlok1 {
+.elementRight {
     width: 49.8%;
     height: 300px;
     border: 1px solid black;
     float: right;
 }
 
-.bigBlok2 {
+.case {
     width: 50%;
     height: 300px;
     border: 1px solid black;
 }
 
-.bigBlok3 {
-    width: 49.8%;
-    height: 300px;
+.box {
+    display: grid;
+    justify-self:  center;
+    align-self: center;
+    width: 400px;
+    height: 400px;
     border: 1px solid black;
-    float: right;
+    margin: 0 auto;
+    margin-top: 100px;
 }
 
-.bigBlok4 {
-    width: 50%;
-    height: 300px;
-    border: 1px solid black;
+.chekbox {
+    justify-self:  center;
+    align-self: center;
+    height: 100px;
+    width: 100px;
+    border: 1px solid red;
+    background-color: #042393;
 }
