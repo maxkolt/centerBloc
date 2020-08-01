@@ -21,3 +21,12 @@ knopka.addEventListener('click', () => {
     const kvadrat = document.getElementById('3');
     kvadrat.remove();
 });
+
+menu.addEventListener('click', function (e) {
+const {target} = e;
+if (target.tegName !== 'button') return;
+const parent = target.parentElement;
+const clone = parent.cloneNode(true);
+clone.removeChild(clone.querySelector('button'));
+    bar.appendChild(clone);
+});
