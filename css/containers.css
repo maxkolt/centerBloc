@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+.container {
+    width: 600px;
+    overflow: hidden;
+}
+
 .kvadrat {
     height: 100px;
     width: 100px;
@@ -13,18 +18,6 @@
     margin-top: 50px;
 }
 
-.elementRight {
-    width: 49.8%;
-    height: 300px;
-    border: 1px solid black;
-    float: right;
-}
-
-.case {
-    width: 50%;
-    height: 300px;
-    border: 1px solid black;
-}
 
 .box {
     display: grid;
@@ -44,4 +37,14 @@
     width: 100px;
     border: 1px solid red;
     background-color: #042393;
+}
+.block {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+}
+.block-main {
+    float: left;
+    width: 50px
+;
 }
