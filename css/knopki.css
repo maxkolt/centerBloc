@@ -1,5 +1,6 @@
 /* КНОПКИ ЗДЕСЬ */
 
+/* TODO - margin разве не включает margin-left+margin-right?*/
 .knopka {
     margin: 40px 0 0 32px;
     background-color: black;

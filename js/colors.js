@@ -22,11 +22,12 @@ knopka.addEventListener('click', () => {
     kvadrat.remove();
 });
 
+// TODO: разве функция работает?
 menu.addEventListener('click', function (e) {
-const {target} = e;
-if (target.tegName !== 'button') return;
-const parent = target.parentElement;
-const clone = parent.cloneNode(true);
-clone.removeChild(clone.querySelector('button'));
+    const {target} = e;
+    if (target.tegName !== 'button') return;
+    const parent = target.parentElement;
+    const clone = parent.cloneNode(true);
+    clone.removeChild(clone.querySelector('button'));
     bar.appendChild(clone);
 });

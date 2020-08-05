@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Todo App</title>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/todo2.css" type="text/css" media="screen" charset="utf-8">
+</head>
+<body>
+<main class="container">
+    <p>
+        <label for="new-task">Добавить Задачу</label>
+        <input id="new-task" type="text">
+        <button>Добавить</button>
+    </p>
+
+    <h3>Список задач</h3>
+    <ul id="incomplete-tasks">
+        <li><input type="checkbox"><label>Заплатить кредит</label><input type="text">
+            <button class="edit">Править</button>
+            <button class="delete">Удалить</button>
+        </li>
+        <li class="editMode"><input type="checkbox"><label>Сходить в магазин</label><input type="text"
+                                                                                           value="Сходить в магазин">
+            <button class="edit">Править</button>
+            <button class="delete">Удалить</button>
+        </li>
+
+    </ul>
+
+    <h3>Завершенные</h3>
+    <ul id="completed-tasks">
+        <li><input type="checkbox" checked><label>Посетить доктора</label><input type="text">
+            <button class="edit">Править</button>
+            <button class="delete">Удалить</button>
+        </li>
+    </ul>
+</main>
+
+<script type="text/javascript" src="../js/todo2.js"></script>
+
+</body>
+</html>

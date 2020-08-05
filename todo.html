@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Page Description">
+    <title>Список моих задач</title>
+    <link href="css/todo.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<!-- В ЭТОМ ФАЙЛЕ ИЗМЕНЕНИЯ НЕ НУЖНЫ -->
+<body>
+<main class="container">
+    <section>
+        <h2 class="text-center">Список задач</h2>
+        <div class="form-group">
+            <label for="itemInput">Напишите задачу здесь</label>
+            <input type="text" class="form-control" name="" id="itemInput">
+        </div>
+        <button id="addButton" class="btn btn-primary">Добавить в список</button>
+        <button id="clearButton" class="btn btn-danger">Очистить список</button>
+    </section>
+
+    <section>
+        <h3>Мои задачи:</h3>
+        <ul id="todoList">
+            <!-- ПОДСКАЗКА: сюда джаваскриптом вставлять новые задачи <li> Задачи из инпута </li>  -->
+        </ul>
+    </section>
+</main>
+<script type="text/javascript" src="js/todo.js"></script>
+</body>
+</html>
