@@ -7,42 +7,42 @@
 
 // Обработка событий, взаимодействие с пользователем - это то, что запускает выполнение кода.
 
-let taskInput = document.getElementById("new-task");//Add a new task.
-let addButton = document.getElementsByTagName("button")[0];//first button
-let incompleteTaskHolder = document.getElementById("incomplete-tasks");//ul of #incomplete-tasks
-let completedTasksHolder = document.getElementById("completed-tasks");//completed-tasks
+let taskInput = document.getElementById("new-task");// Добавить новую задачу.
+let addButton = document.getElementsByTagName("button")[0];// первая кнопка
+let incompleteTaskHolder = document.getElementById("incomplete-tasks");//ul #неполной-задачи
+let completedTasksHolder = document.getElementById("completed-tasks");//выполнение задач
 
 
-//New task list item
+//Новый элемент списка задач
 let createNewTaskElement = function (taskString) {
 
     let listItem = document.createElement("li");
 
-    //input (checkbox)
-    let checkBox = document.createElement("input");//checkbx
-    //label
-    let label = document.createElement("label");//label
-    //input (text)
-    let editInput = document.createElement("input");//text
-    //button.edit
-    let editButton = document.createElement("button");//edit button
+    //ввод данных (флажок)
+    let checkBox = document.createElement("input");//флажок
+    //лейба
+    let label = document.createElement("label");//лейба
+    //ввод данных (текст)
+    let editInput = document.createElement("input");//текст
+    //кнопка.редактировать
+    let editButton = document.createElement("button");//кнопка редактировать
 
-    //button.delete
-    let deleteButton = document.createElement("button");//delete button
+    //кнопка удаления
+    let deleteButton = document.createElement("button");//кнопка удаления
 
     label.innerText = taskString;
 
-    //Each elements, needs appending
+    // Каждый элемент, нуждается в добавлении
     checkBox.type = "checkbox";
     editInput.type = "text";
 
-    editButton.innerText = "Править";//innerText encodes special characters, HTML does not.
+    editButton.innerText = "Править";// innerText кодирует специальные символы, HTML-нет.
     editButton.className = "edit";
     deleteButton.innerText = "Delete";
     deleteButton.className = "delete";
 
 
-    //and appending.
+    //и добавление
     listItem.appendChild(checkBox);
     listItem.appendChild(label);
     listItem.appendChild(editInput);
@@ -54,10 +54,10 @@ let createNewTaskElement = function (taskString) {
 
 let addTask = function () {
     console.log("Add Task...");
-    //Create a new list item with the text from the #new-task:
+    //Создать новый элемент списка с текстом из #new-task:
     let listItem = createNewTaskElement(taskInput.value);
 
-    //Append listItem to incompleteTaskHolder
+    //Добавить listItem к incompleteTaskHolder
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 
@@ -65,7 +65,7 @@ let addTask = function () {
 
 }
 
-//Edit an existing task.
+// Редактировать существующую задачу.
 
 let editTask = function () {
     console.log("Edit Task...");
@@ -77,38 +77,38 @@ let editTask = function () {
     let editInput = listItem.querySelector('input[type=text]');
     let label = listItem.querySelector("label");
     let containsClass = listItem.classList.contains("editMode");
-    //If class of the parent is .editmode
+    //Если класс родителя есть .editMode
     if (containsClass) {
 
-        //switch to .editmode
-        //label becomes the inputs value.
+        // переключиться на .editMode
+        // label становится входным значением.
         label.innerText = editInput.value;
     } else {
         editInput.value = label.innerText;
     }
 
-    //toggle .editmode on the parent.
+    //тумблер .editMode на родителе.
     listItem.classList.toggle("editMode");
 }
 
 
-//Delete task.
+// Удалить задачу.
 let deleteTask = function () {
     console.log("Delete Task...");
 
     let listItem = this.parentNode;
     let ul = listItem.parentNode;
-    //Remove the parent list item from the ul.
+    // Удалите элемент родительского списка из ul.
     ul.removeChild(listItem);
 
 }
 
 
-//Mark task completed
+// Отметить задачу выполненной
 let taskCompleted = function () {
     console.log("Complete Task...");
 
-    //Append the task list item to the #completed-tasks
+    //Добавить элемент списка задач в #completed-tasks
     let listItem = this.parentNode;
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
@@ -118,9 +118,9 @@ let taskCompleted = function () {
 
 let taskIncomplete = function () {
     console.log("Incomplete Task...");
-//Mark task as incomplete.
-    //When the checkbox is unchecked
-    //Append the task list item to the #incomplete-tasks.
+// Отметьте задачу как незавершенную.
+    //Когда флажок снят
+    //Добавьте элемент списка задач к #incomplete-tasks.
     let listItem = this.parentNode;
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
@@ -131,10 +131,10 @@ let ajaxRequest = function () {
     console.log("AJAX Request");
 }
 
-//The glue to hold it all together.
+// Клей, чтобы держать все это вместе.
 
 
-//Set the click handler to the addTask function.
+//Установите обработчик щелчка в функцию addTask.
 addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
 addButton.addEventListener("click", ajaxRequest);
@@ -142,31 +142,31 @@ addButton.addEventListener("click", ajaxRequest);
 
 let bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
     console.log("bind list item events");
-//select ListItems children
+// выберите список детей ListItems
     let checkBox = taskListItem.querySelector("input[type=checkbox]");
     let editButton = taskListItem.querySelector("button.edit");
     let deleteButton = taskListItem.querySelector("button.delete");
 
 
-    //Bind editTask to edit button.
+    //Персонализация editTask на кнопку "Редактировать".
     editButton.onclick = editTask;
-    //Bind deleteTask to delete button.
+    //Персонализация deleteTask на кнопку "Удалить".
     deleteButton.onclick = deleteTask;
-    //Bind taskCompleted to checkBoxEventHandler.
+    //Привязка задачи завершена к checkBoxEventHandler.
     checkBox.onchange = checkBoxEventHandler;
 }
 
-//cycle over incompleteTaskHolder ul list items
-//for each list item
+// цикл над элементами списка ul держателя незавершенной задачи
+//для каждого элемента списка
 for (let i = 0; i < incompleteTaskHolder.children.length; i++) {
 
-    //bind events to list items chldren(tasksCompleted)
+    // привязка событий к элементам списка chldren(tasksCompleted)
     bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
 }
 
 
-//cycle over completedTasksHolder ul list items
+// цикл над завершенными задачами держатель ul список элементов
 for (let i = 0; i < completedTasksHolder.children.length; i++) {
-    //bind events to list items chldren(tasksIncompleted)
+    // привязка событий к элементам списка chldren(tasksIncompleted)
     bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
 }
