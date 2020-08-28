@@ -1,7 +1,7 @@
 // TODO: код писать ниже --->
 
 // Создайте новый элемент списка при нажатии на кнопку "Добавить"
-function list() {
+window.onload = function() {
 
     let todoList = [];
 
