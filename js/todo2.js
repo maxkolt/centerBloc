@@ -26,7 +26,6 @@ let createNewTaskElement = function (taskString) {
     let editInput = document.createElement("input");//текст
     //кнопка.редактировать
     let editButton = document.createElement("button");//кнопка редактировать
-
     //кнопка удаления
     let deleteButton = document.createElement("button");//кнопка удаления
 

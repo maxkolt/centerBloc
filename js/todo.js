@@ -1,6 +1,6 @@
 // TODO: код писать ниже --->
 
-// Создайте новый элемент списка при нажатии на кнопку "Добавить"
+// Создайте новый элемент списка при нажатии на кнопку "Добавить в список"
 window.onload = function () {
 
     let todoList = [];
@@ -38,3 +38,20 @@ window.onload = function () {
 
     }
 }
+
+//удалять элемент из списка при нажатии на кнопку "Очистить список"
+let clearButton = document.createElement("button");
+
+function loadEventListener() {
+    todoList.addEventListener('click', todoList);
+    clearButton.addEventListener('click', clearButton);
+}
+
+
+function todoList(event) {
+    event.target.parentElement.remove();
+}
+
+//function clearButton() {
+ //   todoList.innerHTML = '';
+//}
