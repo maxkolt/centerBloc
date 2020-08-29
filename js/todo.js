@@ -42,16 +42,24 @@ window.onload = function () {
 //удалять элемент из списка при нажатии на кнопку "Очистить список"
 let clearButton = document.createElement("button").onclick;
 
-function loadEventListener() {
-    todoList.addEventListener('click', todoList);
-    clearButton.addEventListener('click', clearButton);
-}
+//function clearButton() {
+  //  items[ulIndex].parentNode.removeChild(items[ulIndex]);
+//}
+
+//clearButton.innerText = "Delete";
+//clearButton.className = "delete";
+
+//function loadEventListener() {
+//  todoList.addEventListener('click', todoList);
+//   clearButton.addEventListener('click', clearButton);
+//}
 
 
-function todoList(event) {
-    event.target.parentElement.remove();
-}
+//function todoList(event) {
+// event.target.parentElement.remove();
+//}
 
 //function clearButton() {
- //   todoList.innerHTML = '';
+//   todoList.innerHTML = '';
 //}
+
