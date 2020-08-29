@@ -40,7 +40,7 @@ window.onload = function () {
 }
 
 //удалять элемент из списка при нажатии на кнопку "Очистить список"
-let clearButton = document.createElement("button");
+let clearButton = document.createElement("button").onclick;
 
 function loadEventListener() {
     todoList.addEventListener('click', todoList);
