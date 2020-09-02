@@ -41,30 +41,28 @@ window.onload = function () {
 
 //удалять элемент из списка при нажатии на кнопку "Очистить список"
 let clearButton = document.createElement("button").onclick;
+
 //const list = document.getElementById('todoList')
 
 
+//function deliteButton() {
 
-function deliteButton(){
+   // list.removeChild(document.getElementsByTagName("ul"));
+    //var clicks = document.getElementsByTagName("todoList").length;
+   // clearButton.innerHTML = clicks;
+//}
 
-    list.removeChild(document.getElementsByTagName("ul"));
-    var clicks = document.getElementsByTagName("todoList").length;
-    clearButton.innerHTML = clicks;
+//$(document).on('click','button', function(e){
+   // var jet = $(e.target);
+  //  localStorage.removeItem(jet.attr('todoList'));
+   // jet.remove();
 
-}
-
-
-
-
-
-
-
-
+//})
 
 
 
 //function clearButton() {
-  //  items[ulIndex].parentNode.removeChild(items[ulIndex]);
+//  items[ulIndex].parentNode.removeChild(items[ulIndex]);
 //}
 
 //clearButton.innerText = "Delete";
