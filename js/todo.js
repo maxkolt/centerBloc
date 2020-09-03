@@ -26,11 +26,10 @@ window.onload = function () {
         let out = '';
         for (var key in todoList) {
             if (todoList[key].check == true) {
-                out += '<input type="checkbox" checked>';
+                out += `<li><input type="checkbox" checked>${todoList[key].todo}</li>`;
             } else {
-                out += '<input type="checkbox">'
+                out += `<li><input type="checkbox">${todoList[key].todo}</li>`;
             }
-            out += todoList[key].todo + '<br>';
 
         }
         document.getElementById('todoList').innerHTML = out;
@@ -40,43 +39,17 @@ window.onload = function () {
 }
 
 //удалять элемент из списка при нажатии на кнопку "Очистить список"
-let clearButton = document.createElement("clearButton").onclick;
 
-const checkboxCollection = document.querySelectorAll('[type="checkbox"]');
-const checkboxes = [...checkboxCollection];
+const clearButton = document.getElementById('clearButton');
 
-   // list.removeChild(document.getElementsByTagName("ul"));
-    //var clicks = document.getElementsByTagName("todoList").length;
-   // clearButton.innerHTML = clicks;
-//}
-
-//$(document).on('click','button', function(e){
-   // var jet = $(e.target);
-  //  localStorage.removeItem(jet.attr('todoList'));
-   // jet.remove();
-
-//})
-
-
-
-//function clearButton() {
-//  items[ulIndex].parentNode.removeChild(items[ulIndex]);
-//}
-
-//clearButton.innerText = "Delete";
-//clearButton.className = "delete";
-
-//function loadEventListener() {
-//  todoList.addEventListener('click', todoList);
-//   clearButton.addEventListener('click', clearButton);
-//}
-
-
-//function todoList(event) {
-// event.target.parentElement.remove();
-//}
-
-//function clearButton() {
-//   todoList.innerHTML = '';
-//}
-
+function onClear(){
+    const checkboxCollection = document.querySelectorAll('li');
+    const checkboxes = [...checkboxCollection];
+    checkboxes.map((item) => {
+        if(item.children[0].checked === true){
+            item.remove()
+        }
+        return item;
+    })
+}
+clearButton.addEventListener('click', onClear);
