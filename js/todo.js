@@ -40,12 +40,10 @@ window.onload = function () {
 }
 
 //удалять элемент из списка при нажатии на кнопку "Очистить список"
-let clearButton = document.createElement("button").onclick;
+let clearButton = document.createElement("clearButton").onclick;
 
-//const list = document.getElementById('todoList')
-
-
-//function deliteButton() {
+const checkboxCollection = document.querySelectorAll('[type="checkbox"]');
+const checkboxes = [...checkboxCollection];
 
    // list.removeChild(document.getElementsByTagName("ul"));
     //var clicks = document.getElementsByTagName("todoList").length;
