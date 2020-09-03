@@ -44,17 +44,6 @@ window.onload = function () {
     function onClear() {
         const checkboxCollection = document.querySelectorAll('li');
         const checkboxes = [...checkboxCollection];
-        checkboxes.map((item) => {
-            if (item.children[0].checked === true) {
-                item.remove()
-            }
-            return item;
-        })
-    }
-
-    function onClear() {
-        const checkboxCollection = document.querySelectorAll('li');
-        const checkboxes = [...checkboxCollection];
         todoList = [];
         checkboxes.forEach((item) => {
             if (item.children[0].checked === true) {
