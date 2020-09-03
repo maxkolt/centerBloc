@@ -42,14 +42,32 @@ window.onload = function () {
 
 const clearButton = document.getElementById('clearButton');
 
-function onClear(){
+function onClear() {
     const checkboxCollection = document.querySelectorAll('li');
     const checkboxes = [...checkboxCollection];
     checkboxes.map((item) => {
-        if(item.children[0].checked === true){
+        if (item.children[0].checked === true) {
             item.remove()
         }
         return item;
     })
 }
+
+//clearButton.addEventListener('click', onClear);
+
+function onClear() {
+    const checkboxCollection = document.querySelectorAll('li');
+    const checkboxes = [...checkboxCollection];
+    todoList = [];
+    checkboxes.forEach((item) => {
+        if (item.children[0].checked === true) {
+            item.remove()
+        } else {
+            todoList.push({'todo': item.innerText, 'check': false})
+        }
+
+    })
+    localStorage.setItem('todo', JSON.stringify(todoList));
+}
+
 clearButton.addEventListener('click', onClear);
