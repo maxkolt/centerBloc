@@ -34,40 +34,38 @@ window.onload = function () {
         }
         document.getElementById('todoList').innerHTML = out;
 
-
     }
-}
+
 
 //удалять элемент из списка при нажатии на кнопку "Очистить список"
 
-const clearButton = document.getElementById('clearButton');
+    const clearButtons = document.getElementById('clearButton');
 
-function onClear() {
-    const checkboxCollection = document.querySelectorAll('li');
-    const checkboxes = [...checkboxCollection];
-    checkboxes.map((item) => {
-        if (item.children[0].checked === true) {
-            item.remove()
-        }
-        return item;
-    })
+    function onClear() {
+        const checkboxCollection = document.querySelectorAll('li');
+        const checkboxes = [...checkboxCollection];
+        checkboxes.map((item) => {
+            if (item.children[0].checked === true) {
+                item.remove()
+            }
+            return item;
+        })
+    }
+
+    function onClear() {
+        const checkboxCollection = document.querySelectorAll('li');
+        const checkboxes = [...checkboxCollection];
+        todoList = [];
+        checkboxes.forEach((item) => {
+            if (item.children[0].checked === true) {
+                item.remove()
+            } else {
+                todoList.push({'todo': item.innerText, 'check': false})
+            }
+
+        })
+        localStorage.setItem('todo', JSON.stringify(todoList));
+    }
+
+    clearButton.addEventListener('click', onClear);
 }
-
-//clearButton.addEventListener('click', onClear);
-
-function onClear() {
-    const checkboxCollection = document.querySelectorAll('li');
-    const checkboxes = [...checkboxCollection];
-    todoList = [];
-    checkboxes.forEach((item) => {
-        if (item.children[0].checked === true) {
-            item.remove()
-        } else {
-            todoList.push({'todo': item.innerText, 'check': false})
-        }
-
-    })
-    localStorage.setItem('todo', JSON.stringify(todoList));
-}
-
-clearButton.addEventListener('click', onClear);
